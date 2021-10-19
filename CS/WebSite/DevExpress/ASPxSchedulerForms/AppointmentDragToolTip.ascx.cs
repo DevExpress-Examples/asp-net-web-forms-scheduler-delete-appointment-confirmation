@@ -15,7 +15,7 @@ public partial class UserForms_AppointmentDragToolTip : ASPxSchedulerToolTipBase
     public override bool ToolTipShowStem { get { return true; } }
 
     protected void Page_Load(object sender, EventArgs e) {
-        DevExpress.Web.ASPxClasses.ASPxWebControl.RegisterBaseScript(Page);
+        DevExpress.Web.ASPxWebControl.RegisterBaseScript(Page);
     }
     protected override Control[] GetChildControls() {
         Control[] controls = new Control[] { lblInterval };

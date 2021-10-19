@@ -10,14 +10,14 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using DevExpress.Web.ASPxScheduler;
 using DevExpress.Web.ASPxScheduler.Internal;
-using DevExpress.Web.ASPxClasses;
+using DevExpress.Web;
 
 public partial class UserForms_SelectionToolTip : ASPxSchedulerToolTipBase {
     public override bool ToolTipShowStem { get { return false; } }
     public override string ClassName { get { return "ASPxClientSelectionToolTip"; } }
 
     protected void Page_Load(object sender, EventArgs e) {
-        DevExpress.Web.ASPxClasses.ASPxWebControl.RegisterBaseScript(Page);
+        DevExpress.Web.ASPxWebControl.RegisterBaseScript(Page);
     }
     protected override void OnLoad(EventArgs e) {
         base.OnLoad(e);

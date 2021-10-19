@@ -35,8 +35,7 @@
 
 using System;
 using DevExpress.Web.ASPxScheduler;
-using DevExpress.Web.ASPxEditors;
-using DevExpress.Web.ASPxClasses;
+using DevExpress.Web;
 
 
 public partial class RecurrentAppointmentDeleteForm : SchedulerFormControl {

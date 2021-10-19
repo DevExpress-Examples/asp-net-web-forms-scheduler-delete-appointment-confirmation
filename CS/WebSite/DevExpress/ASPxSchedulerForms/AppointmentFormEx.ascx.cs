@@ -45,14 +45,13 @@
 using System;
 using System.Web.UI;
 using DevExpress.XtraScheduler;
-using DevExpress.Web.ASPxEditors;
+using DevExpress.Web;
 using DevExpress.Web.ASPxScheduler;
 using DevExpress.Web.ASPxScheduler.Internal;
 using System.Collections;
 using System.Collections.Generic;
 using DevExpress.XtraScheduler.Localization;
 using DevExpress.Web.ASPxScheduler.Controls;
-using DevExpress.Web.ASPxClasses;
 
 public partial class AppointmentFormEx : SchedulerFormControl {
 	AppointmentRecurrenceControl recurrenceControl;

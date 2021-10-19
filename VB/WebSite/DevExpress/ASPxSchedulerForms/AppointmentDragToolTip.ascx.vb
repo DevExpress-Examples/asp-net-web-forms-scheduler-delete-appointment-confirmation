@@ -25,7 +25,7 @@ Partial Public Class UserForms_AppointmentDragToolTip
 	End Property
 
 	Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
-		DevExpress.Web.ASPxClasses.ASPxWebControl.RegisterBaseScript(Page)
+		DevExpress.Web.ASPxWebControl.RegisterBaseScript(Page)
 	End Sub
 	Protected Overrides Function GetChildControls() As Control()
 		Dim controls() As Control = { lblInterval }

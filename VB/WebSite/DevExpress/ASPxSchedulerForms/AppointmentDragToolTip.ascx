@@ -1,5 +1,5 @@
 <%@ Control Language="vb" AutoEventWireup="true" CodeFile="AppointmentDragToolTip.ascx.vb" Inherits="UserForms_AppointmentDragToolTip" %>
-<%@ Register Assembly="DevExpress.Web.ASPxEditors.v11.1" Namespace="DevExpress.Web.ASPxEditors"
+<%@ Register Assembly="DevExpress.Web.v15.1" Namespace="DevExpress.Web"
 	TagPrefix="dxe" %>
 
 <div style="white-space:nowrap;">
