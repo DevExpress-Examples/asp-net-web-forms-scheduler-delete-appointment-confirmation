@@ -15,7 +15,7 @@
     <script>
         function onMenuItemClicked(s, e) {
             if (e.itemName == "DeleteAppointment") {
-                e.handled = !confirm('Are you sure that you want to delete this appointment?');
+                e.handled = !confirm('Are you sure you want to delete this appointment?');
             }
         }
 
@@ -24,7 +24,7 @@
         }
 
         function onCustomDeleteButtonClick() {
-            if (confirm('Are you sure that you want to delete this appointment?')) {
+            if (confirm('Are you sure you want to delete this appointment?')) {
                 clientScheduler.AppointmentFormDelete();
             }
         }

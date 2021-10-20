@@ -3,22 +3,59 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E3999)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
+
+# Scheduler for ASP.NET Web Forms - How to display a client-side confirmation message when an appointment is deleted
+
+This example demonstrates how to display a confirmation message before an appointment is deleted.
+
+<!--IMAGE (will be added later) -->
+
+Users can delete an appointment in the following two ways:
+
+* Select the **Delete** context menu item.
+
+    To override the context menu behavior, handle the [ASPxClientScheduler.MenuItemClicked](https://docs.devexpress.com/AspNet/js-ASPxClientScheduler.MenuItemClicked) event as shown below:
+
+    ```javascript
+    function onMenuItemClicked(s, e) {
+        if (e.itemName == "DeleteAppointment") {
+            e.handled = !confirm('Are you sure you want to delete this appointment?');
+        }
+    }
+    ```
+
+* Click the **Delete** button in an appointment form.
+
+    To override the behavior of the Delete button in the appointment form, replace the built-in **Delete** button with a custom button and handle its [Click](https://docs.devexpress.com/AspNet/js-ASPxClientButton.Click) event.
+
+    ```csharp
+    DialogButton customDeleteButton = dialog.LayoutElements.CreateButton("btnDelete");
+    customDeleteButton.Text = "Delete";            
+    dialog.InsertAfter(customDeleteButton, dialog.FindLayoutElement("Cancel"));
+    dialog.RemoveLayoutElement("Delete");
+
+    ASPxScheduler1.OptionsForms.DialogLayoutSettings.AppointmentDialog.ViewModel.PrepareControl("btnDelete", (ASPxButton button) => {
+        button.ClientSideEvents.Click = "onCustomDeleteButtonClick";
+    });
+    ```
+
+    ```javascript
+    function onCustomDeleteButtonClick() {
+        if (confirm('Are you sure you want to delete this appointment?')) {
+            clientScheduler.AppointmentFormDelete();
+        }
+    }
+    ```
+
+
 <!-- default file list -->
-*Files to look at*:
+## Files to Look At
 
 * [Default.aspx](./CS/WebApplication1/Default.aspx) (VB: [Default.aspx](./VB/WebApplication1/Default.aspx))
 * [Default.aspx.cs](./CS/WebApplication1/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebApplication1/Default.aspx.vb))
 <!-- default file list end -->
-# End-User Restrictions - How to implement a client-side confirmation on deleting an appointment
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/134574114/)**
-<!-- run online end -->
 
+## Documentation
 
-<p>This example demonstrates how a delete appointment action can be confirmed using a client-side scripting technique. Note that the delete appointment action can be initiated from two places: a context menu and appointment form of ASPxScheduler.</p><p>To override context menu behavior, utilize the technique from the <a href="https://www.devexpress.com/Support/Center/p/E291">How to change default menu items and actions in the popup menu</a> example. I.e., handle the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxSchedulerASPxScheduler_PopupMenuShowingtopic"><u>ASPxScheduler.PopupMenuShowing Event</u></a> and specify a custom client-side handler for the menu items via the <strong>e.Menu.ClientSideEvents.ItemClick</strong> parameter (see the code behind and markup of the "Default" webpage).</p><p>To override the "Delete" button behavior of the appointment form, you need to create a custom appointment form (see <a href="http://documentation.devexpress.com/#AspNet/CustomDocument5464"><u>How to: Modify the Appointment Editing Form for Working with Custom Fields</u></a>) and assign an appropriate client-side handler to the <strong>btnDelete.ClientSideEvents.Click</strong> property in the overridden <strong>DataBind</strong><strong>()</strong> method of the form (see CustomAppointmentForm.ascx.cs code-behind file).</p><p><strong>See </strong><strong>A</strong><strong>lso:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/E1534">How to implement a client-side confirmation on the user action modifying the appointment</a></p><br />
-
-
-<br/>
-
-
+- <a href="https://docs.devexpress.com/AspNet/119729/components/scheduler/examples/customization/custom-form-and-custom-fields/how-to-customize-the-appointment-dialog-using-view-model-api-simple-customization">How to: Customize the Appointment Dialog using View Model API (simple customization)</a>
+- <a href="https://docs.devexpress.com/AspNet/119731/components/scheduler/examples/customization/custom-form-and-custom-fields/how-to-customize-the-appointment-dialog-using-view-model-api-working-with-custom-fields">How to: Customize the Appointment Dialog using View Model API (working with custom fields)</a>
