@@ -4,13 +4,13 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Scheduler for ASP.NET Web Forms - How to implement a client-side confirmation on deleting an appointmen
+# Scheduler for ASP.NET Web Forms - How to display a client-side confirmation message when an appointment is deleted
 
 This example demonstrates how to display a confirmation message before an appointment is deleted.
 
 <!--IMAGE (will be added later) -->
 
-Users can delete an appointment in two following ways:
+Users can delete an appointment in the following two ways:
 
 * Select the **Delete** context menu item.
 
@@ -19,14 +19,14 @@ Users can delete an appointment in two following ways:
     ```javascript
     function onMenuItemClicked(s, e) {
         if (e.itemName == "DeleteAppointment") {
-            e.handled = !confirm('Are you sure that you want to delete this appointment?');
+            e.handled = !confirm('Are you sure you want to delete this appointment?');
         }
     }
     ```
 
 * Click the **Delete** button in an appointment form.
 
-    To override behavior of the Delete button in the appointment form, replace the build-in **Delete** button with your custom button and handle its [Click](https://docs.devexpress.com/AspNet/js-ASPxClientButton.Click) event.
+    To override the behavior of the Delete button in the appointment form, replace the built-in **Delete** button with a custom button and handle its [Click](https://docs.devexpress.com/AspNet/js-ASPxClientButton.Click) event.
 
     ```csharp
     DialogButton customDeleteButton = dialog.LayoutElements.CreateButton("btnDelete");
@@ -41,7 +41,7 @@ Users can delete an appointment in two following ways:
 
     ```javascript
     function onCustomDeleteButtonClick() {
-        if (confirm('Are you sure that you want to delete this appointment?')) {
+        if (confirm('Are you sure you want to delete this appointment?')) {
             clientScheduler.AppointmentFormDelete();
         }
     }
