@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Scheduler for ASP.NET Web Forms - How to display a client-side confirmation message when an appointment is deleted
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/134574114/)**
-<!-- run online end -->
 
 This example demonstrates how to display a confirmation message before an appointment is deleted.
 
