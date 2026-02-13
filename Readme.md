@@ -61,7 +61,7 @@ Users can delete an appointment in the following two ways:
 - <a href="https://docs.devexpress.com/AspNet/119729/components/scheduler/examples/customization/custom-form-and-custom-fields/how-to-customize-the-appointment-dialog-using-view-model-api-simple-customization">How to: Customize the Appointment Dialog using View Model API (simple customization)</a>
 - <a href="https://docs.devexpress.com/AspNet/119731/components/scheduler/examples/customization/custom-form-and-custom-fields/how-to-customize-the-appointment-dialog-using-view-model-api-working-with-custom-fields">How to: Customize the Appointment Dialog using View Model API (working with custom fields)</a>
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-scheduler-delete-appointment-confirmation&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-scheduler-delete-appointment-confirmation&~~~was_helpful=no)
 
